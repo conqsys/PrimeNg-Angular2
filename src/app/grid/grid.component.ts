@@ -15,7 +15,8 @@ export interface Car {
 
 export class GridComponent implements OnInit {
 
-  private cars: Car[];
+  private cars: Array<Car>;
+  private datasource: Array<Car>;
   private selectedCar: Car = null;
   private displayDialog: boolean = false;
   private totalRecords: number = 0;
@@ -24,8 +25,11 @@ export class GridComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.commonService.getCarsLarge().then(
-      cars => this.cars = cars);
+    this.commonService.getCarsLarge().then(cars => {
+      this.datasource = cars;
+      this.totalRecords = this.datasource.length;
+      this.cars = this.datasource.slice(0, 10);
+    });
   }
 
   private selectCar(car: Car) {
@@ -40,13 +44,10 @@ export class GridComponent implements OnInit {
 
   /* this is used for lazy loading*/
   private loadData(event) {
-    // this.totalRecords = this.cars.length;
-    // if (event.first !== 0) {
-    //   this.totalRecords = event.first + 20;
-    //   event.rows += 10;
-    // } else if (event.first === 0) {
-    //   this.totalRecords = event.first + 20;
-    //   event.rows += 10;
-    // }
+    setTimeout(() => {
+      if (this.datasource) {
+        this.cars = this.datasource.slice(event.first, (event.first + event.rows));
+      }
+    }, 250);
   };
 }
