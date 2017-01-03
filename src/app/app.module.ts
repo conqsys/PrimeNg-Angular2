@@ -5,7 +5,7 @@ import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/cor
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
-
+import { ConfirmComponent } from './confirm/confirm.component';
 
 
 // import { ModalModule } from 'angular2-modal';
@@ -29,7 +29,10 @@ import {
   SharedModule,
   GrowlModule,
   SliderModule,
-  MultiSelectModule
+  MultiSelectModule,
+  ConfirmDialogModule,
+  ConfirmationService,
+  RatingModule
 } from 'primeng/primeng';
 
 
@@ -70,15 +73,18 @@ import { CommonService } from './services/common.service';
     SharedModule,
     GrowlModule,
     SliderModule,
-    MultiSelectModule
+    MultiSelectModule,
+    ConfirmDialogModule,
+    RatingModule
   ],
   declarations: [
     AppComponent,
     CrudComponent,
     DataTableComponent,
-    GridComponent
+    GridComponent,
+    ConfirmComponent
   ],
-  providers: [CommonService],
+  providers: [CommonService, ConfirmationService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
