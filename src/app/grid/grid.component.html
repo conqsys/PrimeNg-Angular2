@@ -4,7 +4,7 @@
 </div>
 
 <div class="ui-g-12">
-  <p-dataGrid [value]="cars" [paginator]="true" [rows]="10" [lazy]="false" (onLazyLoad)="loadData($event)" [totalRecords]="totalRecords">
+  <p-dataGrid [value]="cars" [paginator]="true" [rows]="10" [lazy]="true" (onLazyLoad)="loadData($event)" [totalRecords]="totalRecords">
     <header>
       List of Cars
     </header>

@@ -39,7 +39,9 @@ import {
 import { AppComponent } from './app.component';
 import { GridComponent } from './grid/grid.component';
 import { DataTableComponent } from './data-table/data-table.component';
-import { CrudComponent } from './data-table/crud.component';
+import { CrudComponent } from './crud/crud.component';
+import { ExportGridComponent } from './export-grid/export-grid.component';
+import { EditableGridComponent } from './editable-grid/editable-grid.component';
 
 
 /* include all Services here */
@@ -76,7 +78,9 @@ import { CommonService } from './services/common.service';
     AppComponent,
     CrudComponent,
     DataTableComponent,
-    GridComponent
+    GridComponent,
+    ExportGridComponent,
+    EditableGridComponent
   ],
   providers: [CommonService],
   bootstrap: [AppComponent],
