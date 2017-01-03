@@ -44,7 +44,7 @@ import { CrudComponent } from './data-table/crud.component';
 
 /* include all Services here */
 
-import { CommonService } from './label/common.service';
+import { CommonService } from './services/common.service';
 
 
 @NgModule({

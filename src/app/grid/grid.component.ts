@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from '../label/common.service';
+import { CommonService } from '../services/common.service';
 
 export interface Car {
   vin;
