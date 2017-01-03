@@ -5,7 +5,7 @@ import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/cor
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
-import { ConfirmComponent } from './confirm/confirm.component';
+
 
 
 // import { ModalModule } from 'angular2-modal';
@@ -27,12 +27,17 @@ import {
   DialogModule,
   DataTableModule,
   SharedModule,
+  ToolbarModule,
   GrowlModule,
   SliderModule,
   MultiSelectModule,
   ConfirmDialogModule,
   ConfirmationService,
-  RatingModule
+  RatingModule,
+  TabViewModule,
+  AccordionModule,
+  SplitButtonModule,
+  FieldsetModule
 } from 'primeng/primeng';
 
 
@@ -45,7 +50,12 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { CrudComponent } from './crud/crud.component';
 import { ExportGridComponent } from './export-grid/export-grid.component';
 import { EditableGridComponent } from './editable-grid/editable-grid.component';
-
+import { ConfirmComponent } from './confirm/confirm.component';
+import { TabViewComponent} from './panel/tab-view.component';
+import { AccordionComponent } from './panel/accordion.component';
+import { PanelComponent } from './panel/panel.component';
+import { FieldSetComponent } from './panel/field-set.component';
+import { ToolBarComponent } from './panel/tool-bar.component';
 
 /* include all Services here */
 
@@ -61,15 +71,20 @@ import { CommonService } from './services/common.service';
     // ModalModule.forRoot(),
     // BootstrapModalModule,
     DropdownModule,
+    AccordionModule,
     CalendarModule,
     ButtonModule,
+    SplitButtonModule,
     InputTextModule,
     MenubarModule,
     RadioButtonModule,
     TooltipModule,
+    FieldsetModule,
+    TabViewModule,
     PanelModule,
     FileUploadModule,
     DataGridModule,
+    ToolbarModule,
     DialogModule,
     DataTableModule,
     SharedModule,
@@ -86,7 +101,12 @@ import { CommonService } from './services/common.service';
     GridComponent,
     ConfirmComponent,
     ExportGridComponent,
-    EditableGridComponent
+    EditableGridComponent,
+    TabViewComponent,
+    AccordionComponent,
+    ToolBarComponent,
+    PanelComponent,
+    FieldSetComponent
   ],
   providers: [CommonService, ConfirmationService],
   bootstrap: [AppComponent],
